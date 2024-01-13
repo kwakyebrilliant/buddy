@@ -1,8 +1,7 @@
 import 'package:buddy/screens/ChatScreen/ChatScreen.dart';
 import 'package:buddy/screens/HomeScreen/HomeScreen.dart';
-import 'package:buddy/screens/MyProfileScreen/MyProfileScreen.dart';
+import 'package:buddy/screens/Media/MediaScreen.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class LandingPage extends StatefulWidget {
   const LandingPage({super.key});
@@ -17,7 +16,7 @@ class _LandingPageState extends State<LandingPage> {
   final List<Widget> _pages = [
     const HomeScreen(),
     const ChatScreen(),
-    const MyProfileScreen(),
+    const MediaScreen(),
   ];
 
   @override
@@ -68,7 +67,7 @@ class _LandingPageState extends State<LandingPage> {
                     _currentIndex = 2;
                   });
                 },
-                icon: const Icon(Icons.person_3_rounded),
+                icon: const Icon(Icons.album_rounded),
                 color: _currentIndex == 2 ? Colors.teal[500] : Colors.grey[300],
               ),
             ],
