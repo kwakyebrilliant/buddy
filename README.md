@@ -1,6 +1,6 @@
 # buddy
 
-A new Flutter project.
+<img src="assets/images/Buddy.png" alt="image" width="" >
 
 ## Getting Started
 
