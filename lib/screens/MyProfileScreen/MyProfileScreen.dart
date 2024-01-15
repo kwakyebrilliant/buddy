@@ -49,13 +49,6 @@ class _MyProfileScreenState extends State<MyProfileScreen> {
                   child: Container(
                     decoration: BoxDecoration(
                       color: Colors.grey[300],
-                      // boxShadow: [
-                      //   BoxShadow(
-                      //     color: const Color(0xFF17203A).withOpacity(0.3),
-                      //     offset: const Offset(2, 5),
-                      //     blurRadius: 10.0,
-                      //   ),
-                      // ],
                     ),
                     child: Padding(
                       padding: const EdgeInsets.only(top: 30.0),
