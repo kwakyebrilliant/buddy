@@ -1,3 +1,4 @@
+import 'package:buddy/screens/Settings/SettingsScreen.dart';
 import 'package:flutter/material.dart';
 
 class MyProfileScreen extends StatefulWidget {
@@ -25,13 +26,38 @@ class _MyProfileScreenState extends State<MyProfileScreen> {
             size: 50.0,
           ),
         ),
-        centerTitle: false,
-        title: const Text(
-          'Profile',
-          style: TextStyle(
-            fontSize: 24.0,
-            color: Colors.black,
-            fontWeight: FontWeight.bold,
+        title: Container(
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              const Text(
+                'Profile',
+                style: TextStyle(
+                  fontSize: 24.0,
+                  color: Colors.black,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              GestureDetector(
+                onTap: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => const SettingsScreen()));
+                },
+                child: Container(
+                  height: 30.0,
+                  width: 30.0,
+                  decoration: BoxDecoration(
+                    color: Colors.black,
+                    borderRadius: BorderRadius.circular(100.0),
+                  ),
+                  child: const Icon(
+                    Icons.settings,
+                    size: 20.0,
+                    color: Colors.white,
+                  ),
+                ),
+              ),
+            ],
           ),
         ),
       ),
@@ -111,91 +137,6 @@ class _MyProfileScreenState extends State<MyProfileScreen> {
                                 ),
                               ),
                             ),
-
-                            //number of post, buddies and buddying
-                            Padding(
-                              padding: const EdgeInsets.all(30.0),
-                              child: Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  //number of posts
-                                  Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.center,
-                                    children: [
-                                      Text(
-                                        'Posts',
-                                        style: TextStyle(
-                                          fontSize: 14.0,
-                                          color: Colors.grey[600],
-                                        ),
-                                      ),
-                                      const Padding(
-                                        padding: EdgeInsets.only(top: 2.0),
-                                        child: Text(
-                                          '517',
-                                          style: TextStyle(
-                                            fontSize: 18.0,
-                                            fontWeight: FontWeight.bold,
-                                          ),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-
-                                  //number of buddies
-                                  Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.center,
-                                    children: [
-                                      Text(
-                                        'Buddies',
-                                        style: TextStyle(
-                                          fontSize: 14.0,
-                                          color: Colors.grey[600],
-                                        ),
-                                      ),
-                                      const Padding(
-                                        padding: EdgeInsets.only(top: 2.0),
-                                        child: Text(
-                                          '602',
-                                          style: TextStyle(
-                                            fontSize: 18.0,
-                                            fontWeight: FontWeight.bold,
-                                          ),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-
-                                  //number of buddying
-                                  Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.center,
-                                    children: [
-                                      Text(
-                                        'Buddying',
-                                        style: TextStyle(
-                                          fontSize: 14.0,
-                                          color: Colors.grey[600],
-                                        ),
-                                      ),
-                                      const Padding(
-                                        padding: EdgeInsets.only(top: 2.0),
-                                        child: Text(
-                                          '376',
-                                          style: TextStyle(
-                                            fontSize: 18.0,
-                                            fontWeight: FontWeight.bold,
-                                          ),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ],
-                              ),
-                            ),
                           ],
                         ),
                       ),
@@ -203,306 +144,103 @@ class _MyProfileScreenState extends State<MyProfileScreen> {
                   ),
                 ),
 
-                //Top cards here
-                Padding(
-                  padding:
-                      const EdgeInsets.only(top: 5.0, left: 15.0, right: 15.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Container(
-                        height: 110.0,
-                        width: 110.0,
-                        decoration: BoxDecoration(
-                          color: Colors.grey[300],
-                          borderRadius: BorderRadius.circular(16.0),
-                          boxShadow: [
-                            BoxShadow(
-                              color: const Color(0xFF17203A).withOpacity(0.3),
-                              offset: const Offset(2, 5),
-                              blurRadius: 10.0,
-                            ),
-                          ],
-                        ),
-                        child: const Center(
-                          child: Column(
-                            children: [
-                              Padding(
-                                padding: EdgeInsets.only(top: 25.0),
-                                child: Icon(
-                                  Icons.person,
-                                  color: Colors.black,
-                                  size: 30,
-                                ),
-                              ),
-                              Padding(
-                                padding: EdgeInsets.only(top: 10.0),
-                                child: Text(
-                                  'Account',
-                                  style: TextStyle(
-                                    color: Colors.black,
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-
-                      //themes here
-                      Container(
-                        height: 110.0,
-                        width: 110.0,
-                        decoration: BoxDecoration(
-                          color: Colors.grey[300],
-                          borderRadius: BorderRadius.circular(16.0),
-                          boxShadow: [
-                            BoxShadow(
-                              color: const Color(0xFF17203A).withOpacity(0.3),
-                              offset: const Offset(2, 5),
-                              blurRadius: 10.0,
-                            ),
-                          ],
-                        ),
-                        child: const Center(
-                          child: Column(
-                            children: [
-                              Padding(
-                                padding: EdgeInsets.only(top: 25.0),
-                                child: Icon(
-                                  Icons.toggle_on_rounded,
-                                  color: Colors.black,
-                                  size: 30,
-                                ),
-                              ),
-                              Padding(
-                                padding: EdgeInsets.only(top: 10.0),
-                                child: Text(
-                                  'Themes',
-                                  style: TextStyle(
-                                    color: Colors.black,
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-
-                      //notifications
-                      Container(
-                        height: 110.0,
-                        width: 110.0,
-                        decoration: BoxDecoration(
-                          color: Colors.grey[300],
-                          borderRadius: BorderRadius.circular(16.0),
-                          boxShadow: [
-                            BoxShadow(
-                              color: const Color(0xFF17203A).withOpacity(0.3),
-                              offset: const Offset(2, 5),
-                              blurRadius: 10.0,
-                            ),
-                          ],
-                        ),
-                        child: const Center(
-                          child: Column(
-                            children: [
-                              Padding(
-                                padding: EdgeInsets.only(top: 25.0),
-                                child: Icon(
-                                  Icons.notifications,
-                                  color: Colors.black,
-                                  size: 30,
-                                ),
-                              ),
-                              Padding(
-                                padding: EdgeInsets.only(top: 10.0),
-                                child: Text(
-                                  'Notification',
-                                  style: TextStyle(
-                                    color: Colors.black,
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-
-                //Profile items here
-                Padding(
-                  padding:
-                      const EdgeInsets.only(top: 50.0, left: 15.0, right: 15.0),
+                DefaultTabController(
+                  length: 2,
                   child: Container(
-                    decoration: BoxDecoration(
-                      color: Colors.grey[300],
-                      borderRadius: BorderRadius.circular(16.0),
-                      boxShadow: [
-                        BoxShadow(
-                          color: const Color(0xFF17203A).withOpacity(0.3),
-                          offset: const Offset(2, 5),
-                          blurRadius: 10.0,
-                        ),
-                      ],
-                    ),
-                    child: const Column(
-                      children: [
-                        //bookmarks here
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        // Tab Navigator
                         Padding(
-                          padding: EdgeInsets.all(20.0),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          padding: const EdgeInsets.only(
+                              left: 20.0, top: 20.0, right: 20.0),
+                          child: Column(
                             children: [
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                children: [
-                                  Icon(
-                                    Icons.bookmark_added_rounded,
-                                    color: Colors.black,
-                                    size: 30,
+                              TabBar(
+                                isScrollable: true,
+                                tabs: [
+                                  Tab(
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.center,
+                                      children: [
+                                        Text(
+                                          'Buddies',
+                                          style: TextStyle(
+                                            fontSize: 14.0,
+                                            color: Colors.grey[600],
+                                          ),
+                                        ),
+                                        const Padding(
+                                          padding: EdgeInsets.only(top: 2.0),
+                                          child: Text(
+                                            '602',
+                                            style: TextStyle(
+                                              fontSize: 18.0,
+                                              fontWeight: FontWeight.bold,
+                                              color: Colors.black,
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
                                   ),
-                                  Padding(
-                                    padding: EdgeInsets.only(left: 10.0),
-                                    child: Text(
-                                      'Bookmarks',
-                                      style: TextStyle(
-                                        color: Colors.black,
-                                      ),
+                                  Tab(
+                                    child: //number of buddying
+                                        Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.center,
+                                      children: [
+                                        Text(
+                                          'Buddying',
+                                          style: TextStyle(
+                                            fontSize: 14.0,
+                                            color: Colors.grey[600],
+                                          ),
+                                        ),
+                                        const Padding(
+                                          padding: EdgeInsets.only(top: 2.0),
+                                          child: Text(
+                                            '376',
+                                            style: TextStyle(
+                                              fontSize: 18.0,
+                                              fontWeight: FontWeight.bold,
+                                              color: Colors.black,
+                                            ),
+                                          ),
+                                        ),
+                                      ],
                                     ),
                                   ),
                                 ],
+                                indicatorColor: Colors.black,
+                                labelPadding: const EdgeInsets.only(
+                                    left: 40.0, right: 40.0),
                               ),
-                              Icon(
-                                Icons.arrow_right_rounded,
-                                color: Colors.black,
-                                size: 30,
-                              ),
-                            ],
-                          ),
-                        ),
+                              Padding(
+                                padding: const EdgeInsets.only(top: 20.0),
+                                child: Container(
+                                  height:
+                                      MediaQuery.of(context).size.height * 0.57,
+                                  child: TabBarView(
+                                    children: [
+                                      //First tabBarview starts from here
+                                      Column(
+                                        children: [],
+                                      ),
 
-                        //faqs here
-                        Padding(
-                          padding: EdgeInsets.only(
-                              left: 20.0, right: 20.0, bottom: 20.0, top: 10.0),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                children: [
-                                  Icon(
-                                    Icons.newspaper_rounded,
-                                    color: Colors.black,
-                                    size: 30,
-                                  ),
-                                  Padding(
-                                    padding: EdgeInsets.only(left: 10.0),
-                                    child: Text(
-                                      'FAQs',
-                                      style: TextStyle(
-                                        color: Colors.black,
+                                      //second tabBarview starts here
+                                      Column(
+                                        children: [],
                                       ),
-                                    ),
+                                    ],
                                   ),
-                                ],
-                              ),
-                              Icon(
-                                Icons.arrow_right_rounded,
-                                color: Colors.black,
-                                size: 30,
-                              ),
-                            ],
-                          ),
-                        ),
-
-                        //about here
-                        Padding(
-                          padding: EdgeInsets.only(
-                              left: 20.0, right: 20.0, bottom: 20.0, top: 10.0),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                children: [
-                                  Icon(
-                                    Icons.info_rounded,
-                                    color: Colors.black,
-                                    size: 30,
-                                  ),
-                                  Padding(
-                                    padding: EdgeInsets.only(left: 10.0),
-                                    child: Text(
-                                      'About Us',
-                                      style: TextStyle(
-                                        color: Colors.black,
-                                      ),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                              Icon(
-                                Icons.arrow_right_rounded,
-                                color: Colors.black,
-                                size: 30,
-                              ),
-                            ],
-                          ),
-                        ),
-
-                        //contact us here
-                        Padding(
-                          padding: EdgeInsets.only(
-                              left: 20.0, right: 20.0, bottom: 20.0, top: 10.0),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                children: [
-                                  Icon(
-                                    Icons.contact_support_rounded,
-                                    color: Colors.black,
-                                    size: 30,
-                                  ),
-                                  Padding(
-                                    padding: EdgeInsets.only(left: 10.0),
-                                    child: Text(
-                                      'Contact Us',
-                                      style: TextStyle(
-                                        color: Colors.black,
-                                      ),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                              Icon(
-                                Icons.arrow_right_rounded,
-                                color: Colors.black,
-                                size: 30,
+                                ),
                               ),
                             ],
                           ),
                         ),
                       ],
-                    ),
-                  ),
-                ),
-
-                //logout text here
-                const Center(
-                  child: Padding(
-                    padding: EdgeInsets.only(top: 30.0, bottom: 30.0),
-                    child: Text(
-                      'LOGOUT',
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontWeight: FontWeight.bold,
-                      ),
                     ),
                   ),
                 ),
